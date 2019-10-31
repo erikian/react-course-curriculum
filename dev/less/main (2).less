@@ -1,0 +1,78 @@
+@import 'global';
+@import 'colors';
+
+@import 'components/normalize';
+@import 'components/icons';
+@import 'components/select';
+@import 'components/adsense';
+@import 'components/social';
+@import 'components/search';
+@import 'components/categorias';
+@import 'components/news-listing';
+@import 'components/msg-boxes';
+@import 'components/footer';
+@import 'components/radio-player';
+
+@import 'header/weather';
+@import 'header/logo';
+@import 'header/menu';
+
+@import 'pages/home';
+@import 'pages/noticia';
+@import 'pages/contato';
+@import 'pages/news-list';
+@import 'pages/internal';
+@import 'pages/busca';
+@import 'pages/404';
+
+// TODO: juntar os dois arquivos caso os classificados sejam reativados
+// @import 'pages/classificados';
+// @import 'pages/classificados-novo';
+
+html {
+    --cross: '×';
+    --dot: '⋅';
+    --ellipsis: '⋮';
+    --tick: '✔';
+    overflow-x: hidden;
+}
+
+body,
+html {
+    min-width: 320px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin-top: ~'calc(var(--margin, 0) * 1px)';
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: static!important;
+    transform: none!important;
+    // transition: margin-top 0.2s;
+}
+
+main {
+    margin-bottom: 60px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.pub-container + main {
+    margin-top: 0;
+}
+
+
+
+// // TODO: mover pro arquivo msg-boxes quando o grunt parar de surtar
+// .amp-box {
+//     border: 1px solid var(--azul-escuro);
+//     margin-bottom: 30px;
+//     position: static;
+//     font-size: 14px;
+//
+//     .link {
+//         display: inline;
+//     }
+// }

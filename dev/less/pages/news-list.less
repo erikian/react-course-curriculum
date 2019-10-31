@@ -1,0 +1,124 @@
+.page-listing {
+    .category-heading {
+        margin-bottom: 30px;
+    }
+}
+
+.news-list-wrapper {
+    padding: 0 15px;
+}
+
+.archive-item {
+    color: var(--cinza-carbon);
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    width: 100%;
+
+    .pub-container {
+        width: 100%;
+    }
+    @media(max-width: 899px) {
+        flex-direction: column;
+    }
+}
+
+.list-new {
+    // display: flex;
+    // @media(max-width: 899px) {
+    //     flex-direction: column;
+    // }
+    display: block;
+    @media(max-width: 899px) {
+        &:first-of-type {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.list-new-img-wrapper {
+    height: ~'calc((100vw - 30px) * 0.5625)';
+    // margin: 0 0 5px;
+    width: ~'calc(100vw - 30px)';
+    @media(min-width: 900px) {
+        height: 225px;
+        width: 400px;
+        margin: 0 15px 0 0;
+    }
+}
+
+.list-new-img {
+    box-shadow: 0 0 1px rgba(0,0,0,0.2);
+    // max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+    @media(max-width: 899px) {
+        height: 100%;
+    }
+    @media(min-width: 900px) {
+        height: 225px;
+        margin: 0 15px 0 0;
+    }
+}
+
+.list-new-meta {
+    align-items: center;
+    display: flex;
+    line-height: 1;
+    margin: 10px 0;
+
+    .noticia-time {
+        align-items: center;
+        display: flex;
+        margin: 0;
+    }
+    @media(min-width: 900px) {
+        margin: 0 0 5px;
+    }
+}
+
+.list-meta {
+    & + & {
+        &::before {
+            content: var(--dot);
+            font-size: 16px;
+            margin: 0 10px;
+        }
+    }
+
+    &.sharing {
+        font-size: 18px;
+
+        &::before {
+            margin: 0 0 0 20px;
+        }
+    }
+}
+
+.list-new-cat {
+    display: block;
+}
+
+.list-new-title {
+    font-size: 24px;
+    transition: color 0.2s;
+
+    &:hover {
+        color: var(--azul-escuro);
+    }
+}
+
+.list-new-text {
+    @media(min-width: 900px) {
+        width: ~'calc(100% - 415px)';
+    }
+}
+
+.list-new-excerpt {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 5px 0;
+    @media(min-width: 900px) {
+        margin: 15px 0;
+    }
+}

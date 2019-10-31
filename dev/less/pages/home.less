@@ -1,0 +1,743 @@
+    .page-home {
+    .owl-dot {
+        border-radius: 0;
+        height: 0;
+        outline: 0;
+        padding-bottom: ~'calc(20% - 10px)';
+        transition: box-shadow 0.2s;
+        width: 20%;
+
+        &.active {
+            box-shadow: 0 1px 5px var(--azul-escuro);
+        }
+    }
+
+    button.owl-dot {
+        align-items: center;
+        border-radius: 0;
+        display: flex;
+        height: ~'calc(20vw - 10px)';
+        justify-content: center;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        width: 20vw;
+
+        &::before {
+            bottom: 0;
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        picture {
+            height: 100%;
+            position: absolute;
+
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+
+    .category-heading {
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--azul-escuro);
+        }
+    }
+}
+
+.featured-news {
+    .loading {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+    }
+
+    @media(max-width: 899px) {
+        &.owl-not-ready {
+            height: 0;
+            overflow: hidden;
+            padding-bottom: ~'calc((245/360) * 100%)';
+        }
+    }
+    @media(min-width: 900px) {
+        align-content: space-between;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 35vw;
+        justify-content: space-between;
+        max-height: 408px;
+        padding: 0 15px;
+    }
+}
+
+.featured-wrapper {
+    background: #000;
+    box-shadow: 0 0 1px rgba(0,0,0,0.3);
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    @media(min-width: 900px) {
+        max-height: 197px;
+        max-width: 270px;
+        width: ~'calc(25% - 10px)';
+
+        a,
+        img {
+            height: auto;
+            max-height: 197px;
+            max-width: 270px;
+            width: 100%;
+        }
+
+        .lazyload,
+        .lazyloading {
+            height: ~'calc((25vw - 20px) * (197 / 270))';
+            width: 270px;
+        }
+
+        &:not(.featured-wrapper--big) {
+            .lazyloaded {
+                filter: grayscale(1);
+                transition: filter 0.3s;
+            }
+
+            &:hover {
+                .lazyloaded {
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+    @media(max-width: 899px) {
+        a,
+        img,
+        picture {
+            width: 100%;
+        }
+
+        .lazyload,
+        .lazyloading {
+            height: 68.15vw;
+            width: 100vw;
+        }
+    }
+}
+
+.featured-wrapper--big {
+    @media(min-width: 900px) {
+        margin: auto 0;
+        max-height: 408px;
+        max-width: 600px;
+        position: relative;
+        width: ~'calc(50% - 10px)';
+
+        a,
+        img {
+            height: 100%;
+            max-height: 408px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .lazyload,
+        .lazyloading {
+            height: ~'calc((50vw - 30px) * (408 / 600))';
+            width: ~'calc(50vw - 30px)';
+        }
+
+        .news-item--caption {
+            font-size: 22px;
+            height: 90px;
+            line-height: 1.214;
+            padding: 10px 23px 17px;
+        }
+    }
+    @media(min-width: 1100px) {
+        .news-item--caption {
+            font-size: 26px;
+        }
+    }
+    @media(min-width: 1150px) and(max-width: 1199px) {
+        width: 50%;
+    }
+    @media(min-width: 1200px) {
+        width: 600px;
+    }
+}
+
+.dot3_featured-wrapper--big {
+    max-height: 2.78em;
+
+    @media(min-width: 900px) {
+        max-height: 2.428em;
+    }
+}
+
+.dot3_featured-wrapper,
+.dot3_regiao {
+    max-height: 2.78em;
+}
+
+.news-item--caption {
+    transition: background 0.2s ease-out;
+}
+
+.news-list {
+    margin-bottom: 18px;
+    margin-top: 18px;
+    width: 100%;
+    @media(min-width: 900px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+// .news-list {
+//     @media(min-width: 1200px) {
+//         &.list-1-wrapper {
+//             .pub-area {
+//                 .is-gads {
+//                     &:last-of-type {
+//                         &,
+//                         .adsbygoogle {
+//                             max-height: 250px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+.list-1 {
+    padding: 0 15px;
+    width: 100%;
+
+    .owl-dots {
+        margin: 0 -5px;
+    }
+
+    button.owl-dot {
+        height: ~'calc(20vw - 14px)';
+    }
+    @media(max-width: 899px) {
+        .lazyload,
+        .lazyloading {
+            height: ~'calc((244 / 460) * 100vw)';
+        }
+    }
+    @media(min-width: 900px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .lazyload,
+        .lazyloading {
+            height: 215px;
+        }
+
+        .itai,
+        .itaporanga {
+            width: ~'calc(50% - 15px)';
+        }
+
+        button.owl-dot {
+            height: 73px;
+            width: 73px;
+        }
+        // & + .pub-container {
+        //     flex: 1;
+        //     padding: 0 15px;
+        // }
+        & + .pub-area {
+            flex: 1;
+            max-height: 1170px;
+            overflow: hidden;
+            padding: 0 15px;
+        }
+    }
+    @media(min-width: 900px) and(max-width: 1199px) {
+        & + .pub-area {
+            display: flex;
+
+            .pub-container {
+                margin: 15px;
+
+                &.is-gads {
+                    flex: 1 0 300px;
+                }
+            }
+        }
+
+        .lazyload,
+        .lazyloading {
+            height: ~'calc((215/405) * (100vw - 60px) / 2)';
+        }
+    }
+    @media(min-width: 1200px) {
+        width: ~'calc(100% - 330px)';
+
+        .itai,
+        .itaporanga {
+            width: ~'calc(50% - 15px)';
+        }
+    }
+
+    > .regiao {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.home-carousel {
+    margin: 22px 0 25px;
+
+    &:not(.owl-loaded) {
+        height: 0;
+        padding-bottom: 100%;
+        overflow: hidden;
+    }
+    @media(min-width: 1200px) {
+        margin: 22px 0 0;
+    }
+}
+
+.home-carousel--item {
+    a {
+        display: block;
+    }
+    /** fica escondido até carregar o carrossel */
+    & + & {
+        display: none;
+    }
+}
+
+.home-carousel--item,
+.news-item {
+    &:hover {
+        .news-item--title {
+            color: var(--azul-escuro);
+        }
+    }
+}
+
+.news-item--title {
+    transition: color 0.2s;
+}
+
+.dot3_carousel,
+.dot3_esportes {
+    max-height: ~'calc(1.192em * 3)';
+}
+
+.list-regiao {
+    @media(min-width: 900px) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.list-regiao--item {
+    picture {
+        width: 100%;
+    }
+    @media(min-width: 900px) {
+        width: ~'calc((100% - 30px) / 3)';
+    }
+}
+// .history-outer {
+//     background: var(--cinza-carbon);
+// }
+//
+// .history-inner {
+//     position: relative;
+// }
+//
+// .history-title {
+//     color: #fff;
+//     font-size: 20px;
+//     left: 15px;
+//     position: absolute;
+//     text-transform: uppercase;
+//     top: 20px;
+// }
+//
+// .text-cultura {
+//     color: var(--amarelo);
+// }
+//
+// .history-inner {
+//     padding: 0 15px;
+// }
+//
+// .history {
+//     display: flex;
+// }
+//
+// .history-text-outer {
+//     align-items: flex-start;
+//     display: flex;
+//     flex-direction: column;
+//     flex: 1 0 auto;
+//     justify-content: center;
+//     margin-left: 7px;
+// }
+//
+// .history-text {
+//     display: block;
+//
+//     &:not(:last-child) {
+//         margin-bottom: 12px;
+//     }
+// }
+//
+// .history-decoration-wrapper {
+//     position: relative;
+//
+//     &::after {
+//         background: #fff;
+//         bottom: -30px;
+//         content: '';
+//         height: 23px;
+//         position: absolute;
+//         right: 0;
+//         width: 112px;
+//     }
+// }
+//
+// .history-pictures {
+//     display: flex;
+//     margin: auto;
+//     transform: translateX(-3px);
+// }
+//
+// .history-pic {
+//     margin: 0 -28px;
+//     position: relative;
+// }
+//
+// .history-pic--caption {
+//     bottom: 27px;
+//     left: 30px;
+//     position: absolute;
+// }
+//
+
+.list-2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    > .variedades,
+    > .policia {
+        padding: 0 15px;
+        width: 100%;
+    }
+    @media(min-width: 900px) {
+        > .variedades,
+        > .policia {
+            // width: 50%;
+            flex: 1;
+        }
+    }
+    @media(min-width: 1200px) {
+        > .variedades,
+        > .policia {
+            // width: ~'calc(200% / 3)';
+            flex: 1;
+
+        }
+    }
+}
+
+.list-policia,
+.list-variedades {
+    margin-bottom: 38px;
+    @media(min-width: 1200px) {
+        align-content: space-between;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 480px;
+    }
+
+    .lazyload,
+    .lazyloading {
+        @media(max-width: 899px) {
+            height: ~'calc((191/360) * (100vw - 30px))';
+        }
+        @media(min-width: 900px) and(max-width: 1199px) {
+            height: ~'calc((215/405) * (100vw - 60px)/ 2)';
+        }
+        @media(min-width: 1200px) {
+            height: 328px;
+        }
+    }
+}
+
+.list-policia--item,
+.list-variedades--item {
+    margin-bottom: 20px;
+
+    &:first-of-type {
+        .news-item--title {
+            font-size: 22px;
+            line-height: 1.24;
+            margin-top: 15px;
+        }
+    }
+
+    &:not(:first-of-type) {
+        & + .list-policia--item,
+        & + .list-variedades--item {
+            &::before {
+                background: var(--cinza-claro);
+                content: '';
+                display: block;
+                height: 1px;
+                margin-bottom: 14px;
+                width: 100%;
+            }
+        }
+    }
+
+    .news-item {
+        display: block;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .news-item--title {
+        font-size: 22px;
+        line-height: 1.19;
+    }
+    @media(min-width: 900px) {
+        &:first-of-type {
+            .news-item--title {
+                font-size: 25px;
+            }
+        }
+
+        & + & {
+            margin: 15px 0 0;
+        }
+    }
+    @media(min-width: 1200px) {
+        width: 300px;
+
+        &:first-of-type {
+            width: 513px;
+        }
+
+        &:nth-of-type(2) {
+            margin-top: 0;
+        }
+    }
+}
+
+.dot3_policia_first {
+    max-height: 4.512em;
+}
+
+.dot3_policia {
+    /** por causa da margin */
+    max-height: ~'calc(3.57em + 10px)';
+}
+
+.section-colunas {
+    padding: 0 15px;
+    width: 100%;
+    @media(min-width: 900px) {
+        max-height: 850px;
+        // width: 50%;
+        width: 330px;
+    }
+    // @media(min-width: 1200px) {
+    //     // width: ~'calc(100% / 3)';
+    // }
+}
+
+.list-colunas--item {
+    align-items: center;
+    display: flex;
+    margin: 0 0 40px;
+
+    .news-item {
+        align-items: center;
+        flex-wrap: nowrap;
+
+        img {
+            border-radius: 50%;
+            flex: 1 0 80px;
+            height: auto;
+            margin-right: 17px;
+        }
+    }
+    @media(min-width: 600px) {
+        .news-item {
+            img {
+                flex: 1 0 102px;
+                width: auto;
+            }
+        }
+    }
+}
+
+.dot3_colunas {
+    max-height: 3.57em;
+}
+
+.list-coluna--name {
+    color: var(--azul-claro);
+    display: block;
+    font-size: 15px;
+    line-height: 1;
+    margin-bottom: 8px;
+    width: 100%;
+}
+// .list2_ad {
+//     flex: 1;
+// }
+
+.list-3 {
+    > .eventos,
+    > .esportes {
+        padding: 0 15px;
+    }
+    @media(min-width: 900px) {
+        display: flex;
+
+        > .eventos,
+        > .esportes {
+            width: 50%;
+        }
+    }
+    @media(min-width: 1080px) {
+        > .eventos,
+        > .esportes {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .lazyload,
+    .lazyloading {
+        @media(max-width: 899px) {
+            height: ~'calc((245 / 360) * (100vw - 30px))';
+        }
+        @media(min-width: 900px) and(max-width: 1079px) {
+            height: ~'calc((245 / 360) * (100vw - 60px) / 2)';
+        }
+    }
+}
+
+.list-esportes,
+.list-eventos {
+    @media(min-width: 1080px) {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        justify-content: space-between;
+    }
+}
+
+.list-esportes--item,
+.list-eventos--item {
+    margin-bottom: 20px;
+
+    &:first-of-type {
+        width: 100%;
+    }
+
+    .news-item--title {
+        margin: 10px 0 5px;
+    }
+
+    img,
+    picture {
+        width: 100%;
+    }
+    @media(min-width: 600px) {
+        .news-item--title {
+            margin: 15px 0;
+        }
+    }
+    @media(min-width: 900px) {
+        margin-bottom: 30px;
+    }
+    @media(min-width: 1080px) {
+        width: ~'calc(50% - 7.5px)';
+
+        &:first-of-type {
+            .lazyload,
+            .lazyloading {
+                height: ~'calc((280 / 570) * (100vw - 60px) / 2)';
+            }
+        }
+
+        &:not(:first-of-type) {
+            margin-top: auto;
+
+            .lazyload,
+            .lazyloading {
+                height: ~'calc((188 / 277) * (50vw - 45px)/ 2)';
+            }
+        }
+    }
+    @media(min-width: 1200px) {
+        &:first-of-type {
+            .lazyload,
+            .lazyloading {
+                height: 280px;
+            }
+        }
+
+        &:not(:first-of-type) {
+            .lazyload,
+            .lazyloading {
+                height: 188px;
+            }
+        }
+    }
+}
+
+.list-variedades--ads {
+    padding: 0 15px;
+    width: 100%;
+    @media(min-width: 900px) {
+        width: 50%;
+    }
+    @media(min-width: 1200px) {
+        width: ~'calc(100% / 3)';
+    }
+}
+
+
+// retirado em 21/05/2019
+// .pub-container-variedades_1 {
+//     a,
+//     img {
+//         margin: 0 auto;
+//         width: 100%;
+//     }
+// }
