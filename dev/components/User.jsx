@@ -46,9 +46,9 @@ export default class User extends Component {
 
         const {about, created, id, karma} = user;
 
-        const aboutHTML = {
-            __html: about
-        }
+        // const aboutHTML = {
+        //     __html: about
+        // }
 
         return (
             <div className="user">
@@ -56,10 +56,10 @@ export default class User extends Component {
                     <h1 className="header">{id}</h1>
 
                     <div className="meta user-meta">
-                        joined <span className="user-meta--featured">{new Date(created*1000).toLocaleString()}</span> has <span className="user-meta--featured">{karma.toLocaleString()} karma{karma>1 && 's'}</span>
+                        joined <span className="user-meta--featured">{new Date(created*1000).toLocaleString()}</span> has <span className="user-meta--featured">{karma.toLocaleString()} karma</span>
                     </div>
 
-                    {aboutHTML.__html && <p className="user-generated" dangerouslySetInnerHTML={aboutHTML}></p>}
+                    {about && <p className="user-generated" dangerouslySetInnerHTML={{__html: about}}></p>}
 
                 </div>
 

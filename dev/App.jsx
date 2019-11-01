@@ -28,40 +28,44 @@ class App extends React.Component {
     };
 
     render() {
+        const {theme} = this.state;
+
         return (
             <Router>
                 <ThemeProvider value={this.state}>
-                    <div className={`main ${this.state.theme} content`}>
-                        <NavBar />
+                    <div className={`app-inner ${theme}`}>
+                        <div className={`content`}>
+                            <NavBar />
 
-                        <React.Suspense fallback={<Loading />}>
-                            <Switch>
-                                <Route
-                                    exact
-                                    path="/"
-                                    render={props => <MainPosts type='top' />}
-                                />
+                            <React.Suspense fallback={<Loading />}>
+                                <Switch>
+                                    <Route
+                                        exact
+                                        path="/"
+                                        render={props => <MainPosts type='top' />}
+                                    />
 
-                                <Route
-                                    exact
-                                    path="/news"
-                                    render={props => <MainPosts type='new' />}
-                                />
+                                    <Route
+                                        exact
+                                        path="/news"
+                                        render={props => <MainPosts type='new' />}
+                                    />
 
-                                <Route
-                                    exact
-                                    path="/user"
-                                    render={props => <User {...props} />}
-                                />
+                                    <Route
+                                        exact
+                                        path="/user"
+                                        render={props => <User {...props} />}
+                                    />
 
-                                <Route
-                                    exact
-                                    path="/post"
-                                    render={props => <Comments {...props} />}
-                                />
-                                <Route render={() => <h1>404</h1>} />
-                            </Switch>
-                        </React.Suspense>
+                                    <Route
+                                        exact
+                                        path="/post"
+                                        render={props => <Comments {...props} />}
+                                    />
+                                    <Route render={() => <h1>404</h1>} />
+                                </Switch>
+                            </React.Suspense>
+                        </div>
                     </div>
                 </ThemeProvider>
             </Router>

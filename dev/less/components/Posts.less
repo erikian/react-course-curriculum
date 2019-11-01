@@ -1,9 +1,9 @@
 .main-new {
-    padding: 0 15px;
+    padding: 15px;
 }
 
 .post {
-    margin-bottom: 20px;
+    padding: 10px 0;
 }
 
 .post-title {
@@ -12,7 +12,7 @@
 }
 
 .post-meta {
-    color: var(--cinza-escuro);
+    color: var(--cinza);
 }
 
 a.post-meta--link {
@@ -26,5 +26,15 @@ a.post-meta--link {
     >h2 {
         font-size: 24px;
         margin-bottom: 20px;
+    }
+}
+
+.dark {
+    .post-title {
+        color: inherit;
+    }
+
+    .post-meta--link {
+        color: var(--cinza-mais-claro);
     }
 }

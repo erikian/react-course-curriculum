@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Loading from './Loading.jsx';
 import PostMeta from './PostMeta.jsx';
 import {fetchItem, fetchComments} from '../utils/api.js';
+import {ThemeConsumer} from '../contexts/theme';
 import queryString from 'query-string';
 import {Link} from 'react-router-dom';
 
@@ -60,35 +61,40 @@ export default class Comments extends Component {
               {title, url} = post;
 
         return(
-           <div className="user">
-                <div className="user-info">
-                    <h1 className="header header--comments">
-                        <Link to={url} title={title} text={title}>
-                            {title}
-                        </Link>
-                    </h1>
 
-                    <div className="meta">
-                        <PostMeta post={post} displayCommentCount />
-                    </div>
+           <ThemeConsumer>
+                {({theme}) => (
+                    <div className="user">
+                        <div className="user-info">
+                            <h1 className="header header--comments">
+                                <Link to={url} title={title} text={title}>
+                                    {title}
+                                </Link>
+                            </h1>
 
-                    {Object.keys(comments).length
-                        ? <ul className="comments">
-                            {comments.map((comment) => (
-                                <li className="comment" key={comment.id}>
-                                    <div className="post-meta">
-                                        <PostMeta post={comment} />
-                                    </div>
+                            <div className="meta">
+                                <PostMeta post={post} displayCommentCount />
+                            </div>
 
-                                    <div className="comment-content user-generated" dangerouslySetInnerHTML={{__html: comment.text}}></div>
-                                </li>
-                            ))}
-                        </ul>
+                            {Object.keys(comments).length
+                                ? <ul className="comments">
+                                    {comments.map((comment) => (
+                                        <li className={`comment comment--${theme}`} key={comment.id}>
+                                            <div className="post-meta">
+                                                <PostMeta post={comment} />
+                                            </div>
 
-                        : <p>This post has no comments yet.</p>
-                    }
-                </div>
-           </div>
+                                            <div className="comment-content user-generated" dangerouslySetInnerHTML={{__html: comment.text}}></div>
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                : <p>This post has no comments yet.</p>
+                            }
+                        </div>
+                   </div>
+                )}
+            </ThemeConsumer>
         )
     }
 }
